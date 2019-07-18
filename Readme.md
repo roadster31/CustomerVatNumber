@@ -1,6 +1,8 @@
 # Customer Vat Number
 
-Ce module permet à vos clients d'indiquer leur N° de TVA intracommunautaire au momùent de la création de leur compte, ou lors de la modification de leur profil.
+Ce module permet à vos clients d'indiquer leur N° de TVA intracommunautaire au momùent de la création de leur compte, ou
+lors de la modification de leur profil. Le numéro indiqué par le client est vérifié via une expression régulière pour
+s'assurer que son format est valide (voir https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s21.html)
 
 Vous pouvez aussi modifier ou indiquer cette information dans la fiche du client dans le back-office.
 
