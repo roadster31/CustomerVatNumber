@@ -1,0 +1,15 @@
+{loop type="customer-vat-number" name="customer-vat" customer_id=$customer_id}
+    <div class="vat-number hidden">
+        <p>
+        {if $VAT_NUMBER}
+            {intl l="Your VAT number: %vat" d='customervatnumber.fo.default' vat=$VAT_NUMBER}
+        {else}
+            {intl l="You have not entered your VAT number." d='customervatnumber.fo.default'}
+        {/if}</p>
+    </div>
+    <script>
+        $(function() {
+            $('.list-info').after($('.vat-number').removeClass('hidden'));
+        });
+    </script>
+{/loop}
