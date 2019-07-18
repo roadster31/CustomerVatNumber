@@ -1,55 +1,21 @@
 # Customer Vat Number
 
-Add a short description here. You can also add a screenshot if needed.
+Ce module permet à vos clients d'indiquer leur N° de TVA intracommunautaire au momùent de la création de leur compte, ou lors de la modification de leur profil.
 
-## Installation
+Vous pouvez aussi modifier ou indiquer cette information dans la fiche du client dans le back-office.
 
-### Manually
-
-* Copy the module into ```<thelia_root>/local/modules/``` directory and be sure that the name of the module is CustomerVatNumber.
-* Activate it in your thelia administration panel
-
-### Composer
-
-Add it in your main thelia composer.json file
+Un boucle simple permet de récupérer le N° de TVA d'un client :
 
 ```
-composer require your-vendor/customer-vat-number-module:~1.0
+{loop type="customer-vat-number" name="vat" customer_id=<a customer ID>}
+   VAT Number : {$VAT_NUMBER}
+{/loop}
 ```
 
-## Usage
+Attention : En front-office et en back-office, pour cause de manque de hooks, les champs de saisie et d'affichage
+sont injectés dans le DOM en Javascript.
 
-Explain here how to use your module, how to configure it, etc.
+Si vous modifiez la structure du DOM des pages `register.html`, `account-update.html` et `account.html` et qu'elle devient différente 
+du template pâr défaut, veillez à adapter le code JS qui injecte le HTML.
 
-## Hook
-
-If your module use one or more hook, fill this part. Explain which hooks are used.
-
-
-## Loop
-
-If your module declare one or more loop, describe them here like this :
-
-[loop name]
-
-### Input arguments
-
-|Argument |Description |
-|---      |--- |
-|**arg1** | describe arg1 with an exemple. |
-|**arg2** | describe arg2 with an exemple. |
-
-### Output arguments
-
-|Variable   |Description |
-|---        |--- |
-|$VAR1    | describe $VAR1 variable |
-|$VAR2    | describe $VAR2 variable |
-
-### Exemple
-
-Add a complete exemple of your loop
-
-## Other ?
-
-If you have other think to put, feel free to complete your readme as you want.
+Idem pour le back-office dans les pages customers.html et customer-edit.html.
