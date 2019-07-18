@@ -12,10 +12,13 @@ Un boucle simple permet de récupérer le N° de TVA d'un client :
 {/loop}
 ```
 
-Attention : En front-office et en back-office, pour cause de manque de hooks, les champs de saisie et d'affichage
-sont injectés dans le DOM en Javascript.
+## Intégration 
 
-Si vous modifiez la structure du DOM des pages `register.html`, `account-update.html` et `account.html` et qu'elle devient différente 
-du template pâr défaut, veillez à adapter le code JS qui injecte le HTML.
+Le module utilise des hooks pour s'intégrer en front-office, en back-offcie et dans la facture PDF. Il n'y a rien de
+particuler à faire.
+
+Attention : en front-office et en back-office, pour cause de manque de hooks, les champs de saisie et d'affichage
+sont injectés dans le DOM en Javascript. Si vous modifiez la structure du DOM des pages `register.html`, `account-update.html` 
+et `account.html` et qu'elle devient différente du template pâr défaut, veillez à adapter le code JS qui injecte le HTML.
 
 Idem pour le back-office dans les pages customers.html et customer-edit.html.
